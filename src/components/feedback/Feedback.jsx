@@ -4,21 +4,20 @@ import s from './Feedback.module.scss';
 export default function Feedback({ options, leaveFeedback }) {
   return (
     <div className={s.buttonWrapper}>
-      {Object.keys(options).map(key => (
+      {options.map(option => (
         <button
-          key={key}
+          key={option}
           type="button"
           className={s.button}
-          id={key}
-          onClick={e => leaveFeedback(e)}
+          onClick={() => leaveFeedback(option)}
         >
-          {key.slice(0, 1).toUpperCase() + key.slice(1).toLowerCase()}
+          {option.slice(0, 1).toUpperCase() + option.slice(1).toLowerCase()}
         </button>
       ))}
     </div>
   );
 }
 Feedback.propTypes = {
-  options: PropTypes.object.isRequired,
-  leaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.array,
+  leaveFeedback: PropTypes.func,
 };
