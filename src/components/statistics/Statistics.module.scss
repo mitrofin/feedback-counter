@@ -7,3 +7,23 @@
   font-size: 20px;
   color: rgb(8, 0, 51);
 }
+.iconsGood {
+  margin: auto 30px;
+  color: rgb(101, 169, 241);
+  width: 30px;
+}
+.iconsBad {
+  composes: iconsGood;
+  color: rgb(241, 101, 101);
+  /* width: 30px; */
+}
+.iconsNeutral {
+  composes: iconsGood;
+  color: rgb(148, 148, 148);
+}
+.listText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+}

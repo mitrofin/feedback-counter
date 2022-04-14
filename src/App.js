@@ -43,10 +43,9 @@ export default function App() {
         <Feedback options={options} leaveFeedback={feedbackHandler} />
       </Section>
       <Section title="Statistics">
-        {countTotalFeedback() === 0 && (
+        {countTotalFeedback() === 0 ? (
           <Natification message="No feedback given" />
-        )}
-        {countTotalFeedback() > 0 && (
+        ) : (
           <Statistics
             good={good}
             neutral={neutral}
